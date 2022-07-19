@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/agentportal/static/css/main.a197c62e.css",
+    "main.js": "/agentportal/static/js/main.5b554071.js",
+    "index.html": "/agentportal/index.html",
+    "main.a197c62e.css.map": "/agentportal/static/css/main.a197c62e.css.map",
+    "main.5b554071.js.map": "/agentportal/static/js/main.5b554071.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a197c62e.css",
+    "static/js/main.5b554071.js"
+  ]
+}
