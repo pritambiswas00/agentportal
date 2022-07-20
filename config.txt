@@ -1,0 +1,13 @@
+{
+  "proxyServer": {
+    "protocol": "http",
+    "host": "34.100.176.62",
+    "port": "8000",
+    "route": "/agentportal"
+  },
+  "hostServerDetails": {
+    "protocol": "http",
+    "host": "35.200.202.90",
+    "port": "5000"
+  }
+}
