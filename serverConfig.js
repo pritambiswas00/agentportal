@@ -24,9 +24,13 @@ class ServerConfig {
     });
   }
 
-  // get isHttps() {
-  //   return "isHttps" in this.config ? this.config.isHttps : false;
-  // }
+  get proxyServer() {
+    return "proxyServer" in this.config ? this.config.proxyServer : {};
+  }
+
+  get hostServerDetails() {
+    return "hostServerDetails" in this.config ? this.config.hostServerDetails : {};
+  }
 }
 
 module.exports = ServerConfig;

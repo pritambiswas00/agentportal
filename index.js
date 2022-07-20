@@ -5,19 +5,23 @@ var path = require('path');
 var PORT = 5000;
 var clientRoot = path.resolve(__dirname, '.', '', 'public');
 console.log(clientRoot)
-var indexPath = path.join(clientRoot, 'agentportal', 'index.html');
+var indexPath = path.join(clientRoot, '', 'index.html');
 
 app.use(express.static(clientRoot));
 async function bootstrap(appModule) {
     var server;
     var serverConfig = new ServerConfig();
     await serverConfig.loadConfig(path.join(__dirname, "config.txt"));
+    console.log(serverConfig.proxyServer.host);
     app.get('/*', function (req, res, next) {
      var hostname = req.hostname;
      var reqpath = req.path;
      console.log(hostname);
-     if(req.path.includes("/agentportal/static")){
-        console.log(true)
+    
+     if(req.path.includes("/static/")){
+        if(hostname !== serverConfig.proxyServer.host)return;
+        req.url = req.url.replace(req.url, serverConfig.proxyServer.route +req.url);
+        console.log(req.url);
      }
      var q = "?";
      for (var p in req.query) {
